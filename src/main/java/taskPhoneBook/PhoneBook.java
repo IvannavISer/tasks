@@ -24,7 +24,7 @@ public class PhoneBook {
     }
 
     //вывод в консоль номеров
-    public static void printNumbers(String name) {
+    public static boolean printNumbers(String name) {
         boolean chek = false;
         for (Map.Entry<String, List<String>> pair : phoneBook.entrySet()) {
             if (pair.getKey().equals(name)) {//если ключ соответствует введённому name
@@ -36,5 +36,6 @@ public class PhoneBook {
         }
         if(!chek)
             System.out.println("Пользователь с данным ФИО отсутствует");
+        return chek;
     }
 }
