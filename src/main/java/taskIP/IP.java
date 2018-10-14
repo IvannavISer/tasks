@@ -27,4 +27,17 @@ public class IP {
         return result;
     }
 
+    //Converting addresses from decimal to string type type 0.0.0.0
+    public static String longToIp(long ip) {
+        StringBuilder result = new StringBuilder(15);
+
+        for (int i = 0; i < 4; i++) {
+            result.insert(0, Long.toString(ip & 0xff));
+            if (i < 3) {
+                result.insert(0, '.');
+            }
+            ip = ip >> 8;
+        }
+        return result.toString();
+    }
 }
