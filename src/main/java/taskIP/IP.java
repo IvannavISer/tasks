@@ -12,6 +12,17 @@ public class IP {
         String start = reader.readLine();
         String end = reader.readLine();
         reader.close();
+        printIp(start, end);
+    }
+
+    //IP output to console
+    private static void printIp(String startIp, String endIp) {
+        long start = ipToLong(startIp);
+        long end = ipToLong(endIp);
+
+        for (long i = ++start; i < end; i++) {
+            System.out.println(longToIp(i));
+        }
     }
 
     //address conversion to decimal number system
